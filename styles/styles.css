@@ -1,15 +1,3 @@
-/* @keyframes gradientAnimation {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-}
-
-body {
-    background: linear-gradient(-45deg,rgba(112,128,123,0.41228991596638653) 0%, rgba(64,176,160,1) 35%, rgba(0,212,255,1) 100%);
-    background-size: 300% 300%;
-    animation: gradientAnimation 8s ease infinite;
-} */
-
 .animation {
     width: 100%; 
     height: 100px;
@@ -119,6 +107,11 @@ header .nav--bar a{
     padding: 15px;
 }
 
+.hover {
+    background-color: #747fe0;
+    font-size: x-large;
+}
+
 .name {
     display: flex; 
     flex-wrap: wrap;
@@ -208,23 +201,23 @@ h1::before {
 
 .project-slider {
   display: flex;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
+  flex-direction: column; 
+  align-items: center;    
   gap: 1.5rem;
   padding: 1rem;
-  scroll-behavior: smooth;
-  white-space: flex;
 }
 
 .project-card {
-  flex: 0 0 80%;
-  max-width: 400px;
+  width: 100%;
+  max-width: 600px; /* Limit width to keep it clean */
   background-color: #efeff4;
   border: 0.5rem solid #747fe0;
   padding: 1.5rem;
   border-radius: 1rem;
-  scroll-snap-align: center;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 .project-title {
@@ -246,6 +239,13 @@ h1::before {
 
 .project-link:hover {
   text-decoration: underline;
+}
+
+.project-card.hover {
+  transform: scale(1.05); 
+  border-color: #3a3ae0;  
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); 
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
 .contact--me {
@@ -271,8 +271,14 @@ h1::before {
 .contact--me .info a{
     text-decoration: none;
     color: #383f3d;
-    padding: 20px;
+    padding: 10px;
+    margin: 10px 10px 10px 10px;
     font-family: "andada-pro",sans-serif;
+}
+
+.contact--me.info li a:hover {
+    color: #747fe0;
+    font-size: large;
 }
 
 footer {
